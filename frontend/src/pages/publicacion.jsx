@@ -25,6 +25,7 @@ import Navigation from "./NavBar";
                 <Publicaciones
                 idPublicacion = {publicacion.idPublicacion}
                 carnet ={publicacion.carnet}
+                nombre ={publicacion.nombre}
                 descripcion = {publicacion.descripcion}
                 imagen ={publicacion.imagen}/>
 

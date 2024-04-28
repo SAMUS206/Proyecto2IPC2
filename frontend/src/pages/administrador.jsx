@@ -7,13 +7,26 @@ const Administrador = () =>{
     const [json, setJson] = useState([])
 
     const fileJSON = (e) => {
+        if (e.target.files.length === 0) {
+            console.log('No file selected.');
+            return;
+        }
+    
         const fileReader = new FileReader();
-        fileReader.readAsText(e.target.file[0], "UTF-8")
+        fileReader.readAsText(e.target.files[0], "UTF-8");
         fileReader.onload = (event) => {
-                const jsonData = JSON.parse(event.target.result)
-                setJson(jsonData)
+            try {
+                const jsonData = JSON.parse(event.target.result);
+                setJson(jsonData);
+            } catch (error) {
+                console.error('Error parsing JSON!', error);
+            }
+        }
+        fileReader.onerror = (error) => {
+            console.error('Error reading file:', error);
         }
     }
+    
 return(
     <> <NavAdmin/>
         <div className="container blue lighten-4">

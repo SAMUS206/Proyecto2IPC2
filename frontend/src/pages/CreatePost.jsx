@@ -14,8 +14,8 @@ const CreatePost = () => {
     const registrarPublicacion = (e) =>{
         e.preventDefault();
         axios.post('http://localhost:3000/crearpublicacion', {
-            carnet: carnet,
-            descripcion: descripcion, 
+            carnet: carnet +" "+ nombre,
+            descripcion:facultad +"" + carrera+""+"" +  descripcion, 
             imagen: imagenB64,
         }).then(response => {
             alert(response.data.msg)

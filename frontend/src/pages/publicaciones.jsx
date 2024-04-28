@@ -12,6 +12,7 @@ const Publicaciones = (props) => {
                       <img src = {"data:image/png;base64," +  props.imagen} />
                         <div className="card-content">
                         <p>{props.carnet}</p>
+                      
                         <p>{props.descripcion}</p>
                         </div>
                         <div className="card-content">
